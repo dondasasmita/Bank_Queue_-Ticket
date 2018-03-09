@@ -24,7 +24,7 @@ public class BankQueue {
     }
 
     // method to issue the number and emptying the queue
-    int createTickets() throws CustomException {
+    int createTickets() throws EmptyQueueException {
         if (putNumber == getNumber) {
             System.out.println("No tickets available");
         }

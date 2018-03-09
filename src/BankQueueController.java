@@ -28,7 +28,7 @@ public class BankQueueController {
                         System.out.print("Welcome to MYD Bank. Your queue number is " + queueNumbers.createTickets() + ". Please be seated.\n");
                         continue;
                     }
-                    catch (CustomException e) {
+                    catch (EmptyQueueException e) {
                         e.endTicketIssue();
                         break;
                     }
