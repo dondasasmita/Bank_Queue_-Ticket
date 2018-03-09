@@ -5,7 +5,7 @@ public class BankQueueController {
     public static int queueSize;
     public static boolean finished;
 
-    public static void main(String[] args) throws EmptyException {
+    public static void main(String[] args) throws EmptyQueueException {
 
         Teller teller1 = new Teller("Emily", 5);
         Teller teller2 = new Teller("Olivia", 2);
@@ -30,14 +30,17 @@ public class BankQueueController {
                             System.out.println("Your queue number is " + queueNumbers.createTickets() + ".");
                             System.out.println("Please be seated.\n");
                         }
-                        catch (EmptyException e) {
+                        catch (EmptyQueueException e) {
                             e.endTicketIssue();
-                        }
-                        continue;
+                            break;
+                    }
                 case 2:
                     finished = true;
             }
+
         }
     }
 }
+
+
 
