@@ -18,7 +18,7 @@ public class BankQueueController {
         for (int i = 0 ; i < queueSize ; i++) {
             queueNumbers.createNumber(i+1);
         }
-
+        // something is not right here, it stopped after issuing a ticket
         while (!finished){
             Scanner userInput = new Scanner(System.in);
 
