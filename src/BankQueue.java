@@ -5,7 +5,6 @@ public class BankQueue {
     private int [] q;
 
 
-
     //Constructor to determine the length of the queue
     BankQueue(int number) {
         q = new int [number];
@@ -24,10 +23,11 @@ public class BankQueue {
     }
 
     // method to issue the number and emptying the queue
-    int createTickets() throws CustomException {
-        if (putNumber == getNumber) {
-            System.out.println("No tickets available");
-        }
+    int createTickets() throws EmptyException {
+//        if (putNumber == getNumber) {
+//            System.out.println("No tickets available.");
+//        }
         return q[getNumber++];
+
     }
 }
