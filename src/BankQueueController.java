@@ -5,12 +5,13 @@ public class BankQueueController {
     public static int queueSize;
     public static boolean finished;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EmptyQueueException {
 
         Teller teller1 = new Teller("Emily", 5);
         Teller teller2 = new Teller("Olivia", 2);
+        Teller teller3 = new Teller("Diana",3);
 
-        queueSize = teller1.getNumberOfCustomers() + teller2.getNumberOfCustomers();
+        queueSize = teller1.getNumberOfCustomers() + teller2.getNumberOfCustomers() + teller3.getNumberOfCustomers();
 
         BankQueue queueNumbers = new BankQueue(queueSize);
 
@@ -18,19 +19,22 @@ public class BankQueueController {
             queueNumbers.createNumber(i+1);
         }
 
-        while (!finished) {
+        while (!finished){
             Scanner userInput = new Scanner(System.in);
-            System.out.print("\nType 1 to issue ticket or 2 to end : ");
+
+            System.out.print("Type 1 to issue ticket or 2 to end :");
+
             int issueNumber = userInput.nextInt();
             switch (issueNumber){
                 case 1:
-                    try {
-                        System.out.print("Welcome to MYD Bank. Your queue number is " + queueNumbers.createTickets() + ". Please be seated.\n");
-                        continue;
-                    }
-                    catch (EmptyQueueException e) {
-                        e.endTicketIssue();
-                        break;
+                    System.out.println("\nWelcome to MYD Bank.");
+                        try {
+                            System.out.println("Your queue number is " + queueNumbers.createTickets() + ".");
+                            System.out.println("Please be seated.\n");
+                        }
+                        catch (EmptyQueueException e) {
+                            e.endTicketIssue();
+                            break;
                     }
                 case 2:
                     finished = true;
@@ -38,6 +42,8 @@ public class BankQueueController {
             }
 
         }
-
     }
 }
+
+
+
