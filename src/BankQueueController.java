@@ -34,11 +34,14 @@ public class BankQueueController {
                         }
                         catch (EmptyQueueException e) {
                             e.endTicketIssue();
-                            break;
+
                     }
+
+                    break;
+
                 case 2:
                     finished = true;
-                        break;
+                    break;
             }
 
         }
