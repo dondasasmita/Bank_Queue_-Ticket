@@ -4,8 +4,6 @@ public class BankQueue {
     private int getNumber;
     private int [] q;
 
-
-
     //Constructor to determine the length of the queue
     BankQueue(int number) {
         q = new int [number];

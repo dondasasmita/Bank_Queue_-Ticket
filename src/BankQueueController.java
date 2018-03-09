@@ -20,7 +20,7 @@ public class BankQueueController {
 
         while (!finished) {
             Scanner userInput = new Scanner(System.in);
-            System.out.print("\nType 1 to issue ticket or 2 to end :");
+            System.out.print("\nType 1 to issue ticket or 2 to end : ");
             int issueNumber = userInput.nextInt();
             switch (issueNumber){
                 case 1:
@@ -34,6 +34,7 @@ public class BankQueueController {
                     }
                 case 2:
                     finished = true;
+                        break;
             }
 
         }
